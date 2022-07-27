@@ -1,0 +1,928 @@
+Keys = {
+    ["ESC"] = 322, ["F1"] = 288, ["F2"] = 289, ["F3"] = 170, ["F5"] = 166, ["F6"] = 167, ["F7"] = 168, ["F8"] = 169, ["F9"] = 56, ["F10"] = 57,
+    ["~"] = 243, ["1"] = 157, ["2"] = 158, ["3"] = 160, ["4"] = 164, ["5"] = 165, ["6"] = 159, ["7"] = 161, ["8"] = 162, ["9"] = 163, ["-"] = 84, ["="] = 83, ["BACKSPACE"] = 177,
+    ["TAB"] = 37, ["Q"] = 44, ["W"] = 32, ["E"] = 38, ["R"] = 45, ["T"] = 245, ["Y"] = 246, ["U"] = 303, ["P"] = 199, ["["] = 39, ["]"] = 40, ["ENTER"] = 18,
+    ["CAPS"] = 137, ["A"] = 34, ["S"] = 8, ["D"] = 9, ["F"] = 23, ["G"] = 47, ["H"] = 74, ["K"] = 311, ["L"] = 182,
+    ["LEFTSHIFT"] = 21, ["Z"] = 20, ["X"] = 73, ["C"] = 26, ["V"] = 0, ["B"] = 29, ["N"] = 249, ["M"] = 244, [","] = 82, ["."] = 81,
+    ["LEFTCTRL"] = 36, ["LEFTALT"] = 19, ["SPACE"] = 22, ["RIGHTCTRL"] = 70,
+    ["HOME"] = 213, ["PAGEUP"] = 10, ["PAGEDOWN"] = 11, ["DELETE"] = 178,
+    ["LEFT"] = 174, ["RIGHT"] = 175, ["TOP"] = 27, ["DOWN"] = 173,
+}
+
+Config = {}
+
+Config.MenuItems = {
+    [1] = {
+        id = 'citizen',
+        title = 'Citizen',
+        icon = 'user',
+        items = {
+            {
+                id    = 'givenum',
+                title = 'Provide Contact Details',
+                icon = 'address-book',
+                type = 'client',
+                event = 'qb-phone_new:client:GiveContactDetails',
+                shouldClose = true,
+            },
+            {
+                id    = 'getintrunk',
+                title = 'Get into the trunk',
+                icon = 'car',
+                type = 'client',
+                event = 'qb-trunk:client:GetIn',
+                shouldClose = true,
+            },
+            {
+                id    = 'cornerselling',
+                title = 'Corner Selling',
+                icon = 'cannabis',
+                type = 'client',
+                event = 'qb-drugs:client:cornerselling',
+                shouldClose = true,
+            },
+            {
+                id    = 'cornerselling',
+                title = 'Stop Corner Selling',
+                icon = 'cannabis',
+                type = 'client',
+                event = 'qb-drugs:client:cornersellingstop',
+                shouldClose = true,
+            },
+            {
+                id = 'interactions',
+                title = 'Interaction',
+                icon = 'exclamation-triangle',
+                items = {
+                    {
+                        id    = 'playerinvehicle',
+                        title = 'Put in vehicle',
+                        icon = 'car-side',
+                        type = 'client',
+                        event = 'police:client:PutPlayerInVehicle',
+                        shouldClose = true,
+                    },
+                    {
+                        id    = 'playeroutvehicle',
+                        title = 'Get out of vehicle',
+                        icon = 'car-side',
+                        type = 'client',
+                        event = 'police:client:SetPlayerOutVehicle',
+                        shouldClose = true,
+                    },
+                    {
+                        id    = 'stealplayer',
+                        title = 'To rob',
+                        icon = 'mask',
+                        type = 'client',
+                        event = 'police:client:RobPlayer',
+                        shouldClose = true,
+                    },
+                    {
+                        id    = 'escort',
+                        title = 'Kidnap',
+                        icon = 'user-friends',
+                        type = 'client',
+                        event = 'police:client:KidnapPlayer',
+                        shouldClose = true,
+                    },
+                    {
+                        id    = 'escort554',
+                        title = 'Hostage',
+                        icon = 'child',
+                        type = 'client',
+                        event = 'A5:Client:TakeHostage',
+                        shouldClose = true,
+                    },
+                }
+            },
+        }
+    },
+    [2] = {
+        id = 'general',
+        title = 'General',
+        icon = 'list-alt',
+        items = {
+            {
+                id    = 'housejob',
+                title = 'House Job',
+                icon = 'hand-holding-usd',
+                type = 'client',
+                event = 'mission:start',
+                shouldClose = true,
+            },
+            {
+                id    = 'gang',
+                title = 'Open Gang Menu',
+                icon = 'key',
+                type = 'client',
+                event = 'gangs:openmenu',
+                shouldClose = true,
+            },
+            {
+                id = 'house',
+                title = 'House Interaction',
+                icon = 'home',
+                items = {
+                    {
+                        id    = 'givehousekey',
+                        title = 'Give House Key',
+                        icon = 'key',
+                        type = 'client',
+                        event = 'qb-houses:client:giveHouseKey',
+                        shouldClose = true,
+                        items = {},
+                    },
+                    {
+                        id    = 'removehousekey',
+                        title = 'Remove House Key',
+                        icon = 'key',
+                        type = 'client',
+                        event = 'qb-houses:client:removeHouseKey',
+                        shouldClose = true,
+                        items = {},
+                    },
+                    {
+                        id    = 'togglelock',
+                        title = 'Toggle Door lock',
+                        icon = 'door-closed',
+                        type = 'client',
+                        event = 'qb-houses:client:toggleDoorlock',
+                        shouldClose = true,
+                    },
+                    {
+                        id    = 'decoratehouse',
+                        title = 'Decorate home',
+                        icon = 'boxes',
+                        type = 'client',
+                        event = 'qb-houses:client:decorate',
+                        shouldClose = true,
+                    },            
+                    {
+                        id = 'houseLocations',
+                        title = 'Interaction Locations',
+                        icon = 'home',
+                        items = {
+                            {
+                                id    = 'setstash',
+                                title = 'Outfit Set',
+                                icon = 'box-open',
+                                type = 'client',
+                                event = 'qb-houses:client:setLocation',
+                                shouldClose = true,
+                            },
+                            {
+                                id    = 'setoutift',
+                                title = 'Outfit Set',
+                                icon = 'tshirt',
+                                type = 'client',
+                                event = 'qb-houses:client:setLocation',
+                                shouldClose = true,
+                            },
+                            {
+                                id    = 'setlogout',
+                                title = 'Logout Set',
+                                icon = 'door-open',
+                                type = 'client',
+                                event = 'qb-houses:client:setLocation',
+                                shouldClose = true,
+                            },
+                        }
+                    },
+                }
+            },
+        }
+    },
+    [3] = {
+        id = 'vehicle',
+        title = 'Vehicle',
+        icon = 'car',
+        items = {
+            {
+                id    = 'vehicleflip',
+                title = 'Flip vehicle',
+                icon = 'wrench',
+                type = 'client',
+                event = 'FlipVehicle',
+                shouldClose = true,
+            },
+            {
+                id    = 'vehicle',
+                title = 'Vehicle Drag Menu',
+                icon = 'tachometer-alt',
+                type = 'client',
+                event = 'nethush:client:viewdragy',
+                shouldClose = true,
+            },
+            {
+                id    = 'teslafunction',
+                title = 'Tesla Futures',
+                icon = 'microchip',
+                items = {
+                    {
+                        id    = 'tesla1',
+                        title = 'Tesla Mark',
+                        icon = 'map-marker-alt',
+                        type = 'client',
+                        event = 'nethush:client:teslablip',
+                        shouldClose = true,
+                    },
+                    {
+                        id    = 'tesla2',
+                        title = 'Tesla AutoPilot',
+                        icon = 'robot',
+                        type = 'client',
+                        event = 'nethush:client:teslapilot',
+                        shouldClose = true,
+                    },
+                    {
+                        id    = 'tesla3',
+                        title = 'Tesla Crash Detect',
+                        icon = 'exclamation-triangle',
+                        type = 'client',
+                        event = 'nethush:client:teslacrash',
+                        shouldClose = false,
+                    },
+                    {
+                        id    = 'tesla4',
+                        title = 'Tesla Dance',
+                        icon = 'child',
+                        type = 'client',
+                        event = 'nethush:client:tesladance',
+                        shouldClose = true,
+                    },     
+                    {
+                        id    = 'tesla5',
+                        title = 'Tesla Reverse lines',
+                        icon = 'chevron-down',
+                        type = 'client',
+                        event = 'nethush:client:teslalines',
+                        shouldClose = true,
+                    },                                                                                                         
+                }
+            },
+    {
+        id    = 'vehicleextras',
+        title = 'Vehicle Extras',
+        icon = 'plus',
+        items = {
+            {
+                id    = 'extra1',
+                title = 'Extra 1',
+                icon = 'plus-circle',
+                type = 'client',
+                event = 'nethush-radialmenu:client:setExtra',
+                shouldClose = false,
+            },
+            {
+                id    = 'extra2',
+                title = 'Extra 2',
+                icon = 'plus-circle',
+                type = 'client',
+                event = 'nethush-radialmenu:client:setExtra',
+                shouldClose = false,
+            },
+            {
+                id    = 'extra3',
+                title = 'Extra 3',
+                icon = 'plus-circle',
+                type = 'client',
+                event = 'nethush-radialmenu:client:setExtra',
+                shouldClose = false,
+            },
+            {
+                id    = 'extra4',
+                title = 'Extra 4',
+                icon = 'plus-circle',
+                type = 'client',
+                event = 'nethush-radialmenu:client:setExtra',
+                shouldClose = false,
+            },
+            {
+                id    = 'extra5',
+                title = 'Extra 5',
+                icon = 'plus-circle',
+                type = 'client',
+                event = 'nethush-radialmenu:client:setExtra',
+                shouldClose = false,
+            },
+            {
+                id    = 'extra6',
+                title = 'Extra 6',
+                icon = 'plus-circle',
+                type = 'client',
+                event = 'nethush-radialmenu:client:setExtra',
+                shouldClose = false,
+            },
+            {
+                id    = 'extra7',
+                title = 'Extra 7',
+                icon = 'plus-circle',
+                type = 'client',
+                event = 'nethush-radialmenu:client:setExtra',
+                shouldClose = false,
+            },
+            {
+                id    = 'extra8',
+                title = 'Extra 8',
+                icon = 'plus-circle',
+                type = 'client',
+                event = 'nethush-radialmenu:client:setExtra',
+                shouldClose = false,
+            },
+            {
+                id    = 'extra9',
+                title = 'Extra 9',
+                icon = 'plus-circle',
+                type = 'client',
+                event = 'nethush-radialmenu:client:setExtra',
+                shouldClose = false,
+            },                                                                                                                  
+        }
+    },
+    {
+        id   = 'vehicle',
+        title = 'Vehicle Menu',
+        icon = 'car',
+        type = 'client',
+        event = 'ron-carmenu:openUI',
+        shouldClose = true,
+        items = {
+            {
+                id    = 'vehicledoors',
+                title = 'Vehicle doors',
+                icon = 'car',
+                items = {
+                    {
+                        id    = 'door0',
+                        title = 'Front left',
+                        icon = 'car',
+                        type = 'client',
+                        event = 'nethush-radialmenu:client:openDoor',
+                        shouldClose = false,
+                    },
+                    {
+                        id    = 'door4',
+                        title = 'Bonnet',
+                        icon = 'car',
+                        type = 'client',
+                        event = 'nethush-radialmenu:client:openDoor',
+                        shouldClose = false,
+                    },
+                    {
+                        id    = 'door1',
+                        title = 'Front right',
+                        icon = 'car',
+                        type = 'client',
+                        event = 'nethush-radialmenu:client:openDoor',
+                        shouldClose = false,
+                    },
+                    {
+                        id    = 'door3',
+                        title = 'Right behind',
+                        icon = 'car',
+                        type = 'client',
+                        event = 'nethush-radialmenu:client:openDoor',
+                        shouldClose = false,
+                    },
+                    {
+                        id    = 'door5',
+                        title = 'Trunk',
+                        icon = 'car',
+                        type = 'client',
+                        event = 'nethush-radialmenu:client:openDoor',
+                        shouldClose = false,
+                    },
+                    {
+                        id    = 'door2',
+                        title = 'Left behind',
+                        icon = 'car',
+                        type = 'client',
+                        event = 'nethush-radialmenu:client:openDoor',
+                        shouldClose = false,
+                    },
+                }
+            },
+            {
+                id    = 'vehicleextras',
+                title = 'Vehicle Extras',
+                icon = 'car',
+                items = {
+                    {
+                        id    = 'extra1',
+                        title = 'Extra 1',
+                        icon = 'car',
+                        type = 'client',
+                        event = 'nethush-radialmenu:client:setExtra',
+                        shouldClose = false,
+                    },
+                    {
+                        id    = 'extra2',
+                        title = 'Extra 2',
+                        icon = 'car',
+                        type = 'client',
+                        event = 'nethush-radialmenu:client:setExtra',
+                        shouldClose = false,
+                    },
+                    {
+                        id    = 'extra3',
+                        title = 'Extra 3',
+                        icon = 'car',
+                        type = 'client',
+                        event = 'nethush-radialmenu:client:setExtra',
+                        shouldClose = false,
+                    },
+                    {
+                        id    = 'extra4',
+                        title = 'Extra 4',
+                        icon = 'car',
+                        type = 'client',
+                        event = 'nethush-radialmenu:client:setExtra',
+                        shouldClose = false,
+                    },
+                    {
+                        id    = 'extra5',
+                        title = 'Extra 5',
+                        icon = 'car',
+                        type = 'client',
+                        event = 'nethush-radialmenu:client:setExtra',
+                        shouldClose = false,
+                    },
+                    {
+                        id    = 'extra6',
+                        title = 'Extra 6',
+                        icon = 'car',
+                        type = 'client',
+                        event = 'nethush-radialmenu:client:setExtra',
+                        shouldClose = false,
+                    },
+                    {
+                        id    = 'extra7',
+                        title = 'Extra 7',
+                        icon = 'car',
+                        type = 'client',
+                        event = 'nethush-radialmenu:client:setExtra',
+                        shouldClose = false,
+                    },
+                    {
+                        id    = 'extra8',
+                        title = 'Extra 8',
+                        icon = 'car',
+                        type = 'client',
+                        event = 'nethush-radialmenu:client:setExtra',
+                        shouldClose = false,
+                    },
+                    {
+                        id    = 'extra9',
+                        title = 'Extra 9',
+                        icon = 'car',
+                        type = 'client',
+                        event = 'nethush-radialmenu:client:setExtra',
+                        shouldClose = false,
+                    },                                                                                                                  
+                }
+            },
+            {
+                id    = 'vehicleseats',
+                title = 'Vehicle seats',
+                icon = 'car',
+                items = {
+                    {
+                        id    = 'door0',
+                        title = 'Driver',
+                        icon = 'car',
+                        type = 'client',
+                        event = 'nethush-radialmenu:client:ChangeSeat',
+                        shouldClose = false,
+                    },
+                }
+            },
+        }
+        },
+    }
+ },
+ [4] = {
+    id = 'jobinteractions',
+    title = 'Work',
+    icon = 'briefcase',
+    items = {},
+},
+--[[[5] = {
+    id = 'animations',
+    title = 'Animations',
+    icon = 'american-sign-language-interpreting',
+    items = {
+        {
+            id    = 'brave',
+            title = 'Animations Brave',
+            icon = 'angry',
+            type = 'client',
+            event = 'AnimSet:Brave',
+            shouldClose = true,
+        },
+        {
+            id    = 'hurry',
+            title = 'Animation Hurry',
+            icon = 'angry',
+            type = 'client',
+            event = 'AnimSet:Hurry',
+            shouldClose = true,
+        },
+        {
+            id    = 'business',
+            title = 'Animation Business',
+            icon = 'angry',
+            type = 'client',
+            event = 'AnimSet:Business',
+            shouldClose = true,
+        },
+        {
+            id    = 'tipsy',
+            title = 'Animation Tipsy',
+            icon = 'angry',
+            type = 'client',
+            event = 'AnimSet:Tipsy',
+            shouldClose = true,
+        },
+        {
+            id    = 'tipsy',
+            title = 'Animation Tipsy',
+            icon = 'angry',
+            type = 'client',
+            event = 'AnimSet:Tipsy',
+            shouldClose = true,
+        },
+        {
+            id    = 'default',
+            title = 'Animation Default',
+            icon = 'angry',
+            type = 'client',
+            event = 'AnimSet:default',
+            shouldClose = true,
+        },
+        {
+            id    = 'money',
+            title = 'Animation Money',
+            icon = 'angry',
+            type = 'client',
+            event = 'AnimSet:Money',
+            shouldClose = true,
+        },
+
+    },
+ },]]
+}
+
+Config.JobInteractions = {
+    ["ambulance"] = {
+        {
+            id    = 'door',
+            title = 'Doorlock',
+            icon = 'key',
+            type = 'client',
+            event = 'nethush-doorlock:client:toggle:locks',
+            shouldClose = true,
+        },
+        {
+            id    = 'statuscheck',
+            title = 'Interaction Person',
+            icon = 'heartbeat',
+            type = 'client',
+            event = 'hospital:client:CheckStatus',
+            shouldClose = true,
+        },
+
+        {
+            id    = 'treatwounds',
+            title = 'Heal Wounds',
+            icon = 'band-aid',
+            type = 'client',
+            event = 'hospital:client:TreatWounds',
+            shouldClose = true,
+        },
+        {
+            id    = 'reviveplayer',
+            title = 'Help Up',
+            icon = 'user-md',
+            type = 'client',
+            event = 'hospital:client:RevivePlayer',
+            shouldClose = true,
+        },
+        {
+            id    = 'emergencybutton2',
+            title = 'Emergency button',
+            icon = 'bell',
+            type = 'client',
+            event = 'qb-radialmenu:client:send:panic:button',
+            shouldClose = true,
+        },
+        {
+            id    = 'escort',
+            title = 'Escort',
+            icon = 'user-friends',
+            type = 'client',
+            event = 'police:client:EscortPlayer',
+            shouldClose = true,
+        },
+    },
+    ["doctor"] = {
+        {
+            id    = 'door',
+            title = 'Doorlock',
+            icon = 'key',
+            type = 'client',
+            event = 'nethush-doorlock:client:toggle:locks',
+            shouldClose = true,
+        },
+        {
+            id    = 'statuscheck',
+            title = 'Interaction Person',
+            icon = 'heartbeat',
+            type = 'client',
+            event = 'hospital:client:CheckStatus',
+            shouldClose = true,
+        },
+        {
+            id    = 'treatwounds',
+            title = 'Heal Wounds',
+            icon = 'band-aid',
+            type = 'client',
+            event = 'hospital:client:TreatWounds',
+            shouldClose = true,
+        },
+        {
+            id    = 'reviveplayer',
+            title = 'Help Up',
+            icon = 'user-md',
+            type = 'client',
+            event = 'hospital:client:RevivePlayer',
+            shouldClose = true,
+        },
+        {
+            id    = 'emergencybutton2',
+            title = 'Emergency button',
+            icon = 'bell',
+            type = 'client',
+          --  event = 'police:client:SendPoliceEmergencyAlert',
+            event = 'qb-radialmenu:client:send:panic:button',
+            shouldClose = true,
+        },
+        {
+            id    = 'escort',
+            title = 'Escort',
+            icon = 'user-friends',
+            type = 'client',
+            event = 'police:client:EscortPlayer',
+            shouldClose = true,
+        },
+    }, 
+    ["taxi"] = {
+        {
+            id    = 'togglemeter',
+            title = 'Show/Hide Meter',
+            icon = 'eye-slash',
+            type = 'client',
+            event = 'qb-taxi:client:toggleMeter',
+            shouldClose = false,
+        },
+        {
+            id    = 'togglemouse',
+            title = 'Start/Stop Meter',
+            icon = 'hourglass-start',
+            type = 'client',
+            event = 'qb-taxi:client:enableMeter',
+            shouldClose = true,
+        },
+        {
+            id    = 'npc_mission',
+            title = 'NPC Mission',
+            icon = 'taxi',
+            type = 'client',
+            event = 'qb-taxi:client:DoTaxiNpc',
+            shouldClose = true,
+        },
+    },
+    ["tow"] = {
+        {
+            id    = 'togglenpc',
+            title = 'Toggle NPC',
+            icon = 'toggle-on',
+            type = 'client',
+            event = 'jobs:client:ToggleNpc',
+            shouldClose = true,
+        },
+        {
+            id    = 'towvehicle',
+            title = 'Tow Vehicle',
+            icon = 'truck-pickup',
+            type = 'client',
+            event = 'qb-tow:client:TowVehicle',
+            shouldClose = true,
+        },
+    },
+    ["mechanic"] = {
+        {
+            id    = 'hijack',
+            title = 'Hijack Vehicle',
+            icon = 'mask',
+            type = 'client',
+            event = 'nethush:hijack',
+            shouldClose = true,
+        },
+        {
+            id    = 'repairveh',
+            title = 'Repair Vehicle',
+            icon = 'oil-can',
+            type = 'client',
+            event = 'vehiclefailure:client:RepairVehicleFull',
+            shouldClose = true,
+        },
+    },
+    ["police"] = {
+        {
+            id    = 'door',
+            title = 'Doorlock',
+            icon = 'key',
+            type = 'client',
+            event = 'nethush-doorlock:client:toggle:locks',
+            shouldClose = true,
+        },
+        {
+            id    = 'viewradar',
+            title = 'Open Radar Remote',
+            icon = 'rss',
+            type = 'client',
+            event = 'nethush:client:viewradar',
+            shouldClose = true,
+        },
+        {
+            id    = 'mdt',
+            title = 'Open Mdt',
+            icon = 'address-book',
+            type = 'client',
+            event = 'nethush-radialmenu:client:Openmdt',
+            shouldClose = true,
+        },
+        {
+            id    = 'alerts',
+            title = 'View Previous Alerts',
+            icon = 'comment',
+            type = 'client',
+            event = 'nethush:client:viewAlerts',
+            shouldClose = true,
+        },
+        {
+            id    = 'emergencybutton',
+            title = 'Emergency button',
+            icon = 'bell',
+            type = 'client',
+           -- event = 'police:client:SendPoliceEmergencyAlert',
+            event = 'qb-radialmenu:client:send:panic:button',
+            shouldClose = true,
+        },
+        {
+            id    = 'resethouse',
+            title = 'Reset House Lock',
+            icon = 'key',
+            type = 'client',
+            event = 'qb-houses:client:ResetHouse',
+            shouldClose = true,
+        },
+        {
+            id = 'policeinteraction',
+            title = 'Police Interaction',
+            icon = 'tasks',
+            items = {
+                {
+                    id    = 'statuscheck',
+                    title = 'Research Person',
+                    icon = 'heartbeat',
+                    type = 'client',
+                    event = 'hospital:client:CheckStatus',
+                    shouldClose = true,
+                },
+                {
+                    id    = 'escort',
+                    title = 'Escort',
+                    icon = 'user-friends',
+                    type = 'client',
+                    event = 'police:client:EscortPlayer',
+                    shouldClose = true,
+                },
+                {
+                    id    = 'searchplayer',
+                    title = 'Search',
+                    icon = 'search',
+                    type = 'client',
+                    event = 'police:client:SearchPlayer',
+                    shouldClose = true,
+                },
+                {
+                    id    = 'jailplayer',
+                    title = 'Jail',
+                    icon = 'user-lock',
+                    type = 'client',
+                    event = 'police:client:JailPlayer',
+                    shouldClose = true,
+                },
+                {
+                    id    = 'lockhouse',
+                    title = 'Lock the door',
+                    icon = 'user-lock',
+                    type = 'client',
+                    event = 'qb-houserobbery:client:PoliceLockHouse',
+                    shouldClose = true,
+                },
+            }
+        },
+        {
+            id = 'policeobjects',
+            title = 'Objects',
+            icon = 'road',
+            items = {
+                {
+                    id    = 'spawnpion',
+                    title = 'Pion',
+                    icon = 'exclamation-triangle',
+                    type = 'client',
+                    event = 'police:client:spawnCone',
+                    shouldClose = false,
+                },
+                {
+                    id    = 'spawnhek',
+                    title = 'Fence',
+                    icon = 'torii-gate',
+                    type = 'client',
+                    event = 'police:client:spawnBarier',
+                    shouldClose = false,
+                },
+                {
+                    id    = 'spawnschotten',
+                    title = 'Bulkheads',
+                    icon = 'sign',
+                    type = 'client',
+                    event = 'police:client:spawnSchotten',
+                    shouldClose = false,
+                },
+                {
+                    id    = 'spawntent',
+                    title = 'Tent',
+                    icon = 'campground',
+                    type = 'client',
+                    event = 'police:client:spawnTent',
+                    shouldClose = false,
+                },
+                {
+                    id    = 'spawnverlichting',
+                    title = 'Lighting',
+                    icon = 'lightbulb',
+                    type = 'client',
+                    event = 'police:client:spawnLight',
+                    shouldClose = false,
+                },
+                {
+                    id    = 'spikestrip',
+                    title = 'Place spike strip',
+                    icon = 'caret-up',
+                    type = 'client',
+                    event = 'police:client:SpawnSpikeStrip',
+                    shouldClose = false,
+                },
+                {
+                    id    = 'deleteobject',
+                    title = 'Delete object',
+                    icon = 'trash',
+                    type = 'client',
+                    event = 'police:client:deleteObject',
+                    shouldClose = false,
+                },
+            }
+        },
+    },
+}
+
+
+Config.TrunkClasses = {
+    [0]  = { allowed = true, x = 0.0, y = -1.5, z = 0.0 }, --Coupes  
+    [1]  = { allowed = true, x = 0.0, y = -2.0, z = 0.0 }, --Sedans  
+    [2]  = { allowed = true, x = 0.0, y = -1.0, z = 0.25 }, --SUVs  
+    [3]  = { allowed = true, x = 0.0, y = -1.5, z = 0.0 }, --Coupes  
+    [4]  = { allowed = true, x = 0.0, y = -2.0, z = 0.0 }, --Muscle  
+    [5]  = { allowed = true, x = 0.0, y = -2.0, z = 0.0 }, --Sports Classics  
+    [6]  = { allowed = true, x = 0.0, y = -2.0, z = 0.0 }, --Sports  
+    [7]  = { allowed = true, x = 0.0, y = -2.0, z = 0.0 }, --Super  
+    [8]  = { allowed = false, x = 0.0, y = -1.0, z = 0.25 }, --Motorcycles  
+    [9]  = { allowed = true, x = 0.0, y = -1.0, z = 0.25 }, --Off-road  
+    [10] = { allowed = true, x = 0.0, y = -1.0, z = 0.25 }, --Industrial  
+    [11] = { allowed = true, x = 0.0, y = -1.0, z = 0.25 }, --Utility  
+    [12] = { allowed = true, x = 0.0, y = -1.0, z = 0.25 }, --Vans  
+    [13] = { allowed = true, x = 0.0, y = -1.0, z = 0.25 }, --Cycles  
+    [14] = { allowed = true, x = 0.0, y = -1.0, z = 0.25 }, --Boats  
+    [15] = { allowed = true, x = 0.0, y = -1.0, z = 0.25 }, --Helicopters  
+    [16] = { allowed = true, x = 0.0, y = -1.0, z = 0.25 }, --Planes  
+    [17] = { allowed = true, x = 0.0, y = -1.0, z = 0.25 }, --Service  
+    [18] = { allowed = true, x = 0.0, y = -1.0, z = 0.25 }, --Emergency  
+    [19] = { allowed = true, x = 0.0, y = -1.0, z = 0.25 }, --Military  
+    [20] = { allowed = true, x = 0.0, y = -1.0, z = 0.25 }, --Commercial  
+    [21] = { allowed = true, x = 0.0, y = -1.0, z = 0.25 }, --Trains  
+}

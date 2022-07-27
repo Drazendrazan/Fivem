@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://kit.fontawesome.com/6d23558e9b.js" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="script.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <div class="speedometer">
+      <svg id="svg" width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+        <circle id="bar" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="-565.48"></circle>
+        <circle id="bar2" cx="100" cy="100" r="67.5" stroke="rgb(100,100,100)" stroke-width="5" fill="none" stroke-dasharray="565" stroke-dashoffset="706" />
+      </svg>
+      
+      <svg class="arc1" height="200" width="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="100" stroke="rgba(150,150,150,0.5)" stroke-width="40" fill="none" />
+      </svg> 
+      <svg class="arc2" height="200" width="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="100" stroke="rgba(150,150,150,0.5)" stroke-width="40" fill="none" />
+      </svg> 
+      <svg class="arc3" height="200" width="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="100" stroke="rgba(150,150,150,0.5)" stroke-width="40" fill="none" />
+      </svg> 
+      <svg class="arc4" height="200" width="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="100" stroke="rgba(150,150,150,0.5)" stroke-width="40" fill="none" />
+      </svg> 
+      <svg class="arc5" height="200" width="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="100" stroke="rgba(150,150,150,0.5)" stroke-width="40" fill="none" />
+      </svg> 
+     
+      <svg class="speedo-marker" height="200" width="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="67.5" stroke="rgb(255,255,255)" stroke-width="3" fill="none" />
+      </svg> 
+      
+      <svg class="speedo-marker2" height="200" width="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="67.5" stroke="rgb(255,255,255)" stroke-width="3" fill="none" />
+      </svg> 
+
+      <div class="speed-value" id="speed">65</div>
+      <div class="speed-value" style="font-size: 0.75vw;transform: translate(-50%,100%);">km/h</div>
+    </div>
+
+    <div class="mode">ECO PRO</div>
+
+    <div class="gas">
+      <div class="gas-value"></div>
+      <div class="gas-value2"></div>
+      <i class="gas-icon fas fa-gas-pump"></i>
+    </div>
+
+    <div class="oil">
+      <div class="oil-value"></div>
+      <div class="oil-value2"></div>
+      <i class="oil-icon fas fa-oil-can"></i>
+    </div>
+
+    <div class="board">
+      <i class="fas fa-angle-left"></i><i class="fas fa-angle-right"></i>
+      <i class="fas fa-car-battery"></i><i class="fas fa-car"></i>
+      <div class="seatbelt"></div>
+      <br>
+    </div>
+  </body>
+</html>

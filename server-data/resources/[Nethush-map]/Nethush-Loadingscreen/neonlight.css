@@ -1,0 +1,208 @@
+/* Code by Coding With Fun */
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300');
+
+
+.Neon {
+	position: absolute;
+	top: 260%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: 0;
+	padding: 0 10px;
+	font-size: 3.4em;
+	color: #ece9e9;
+	text-shadow: 0 0 20px #ff005b;
+}
+
+.Neonc {
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: 0;
+	padding: 0 10px;
+	font-size: 6em;
+	color: #ece9e9;
+}
+
+.Neon:after {
+	content: attr(data-text);
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0 20px;
+	z-index: -1;
+	color:rgb(0, 251, 46);
+	filter: blur(15px);
+}
+
+.Neon:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -2;
+	background: #046979c0;
+	opacity: .5;
+	filter: blur(40px);
+}
+
+.Neonc:after {
+	content: attr(data-textn);
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0 20px;
+	z-index: -1;
+	color: #046979c0;
+	filter: blur(10px);
+}
+
+.Neonc:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -2;
+	background: #046979c0;
+	opacity: .5;
+	filter: blur(40px);
+}
+
+
+.slogan {
+  position: absolute;
+	top: 380%;
+	left: 40%;
+   height:45px;
+  color: #ff005b;
+  display: block;
+  overflow: hidden; 
+  width: 0em;
+  height: 1.25em;
+  margin: 1em auto;
+  font-size: 2em;
+  line-height: 1.5em;
+  border-right: .125em solid #39F;
+  box-sizing: content-box;
+  animation-name: blink-start, typing, blink-end;
+  animation-duration: 1s, 3s, 1s;
+  animation-timing-function: linear, steps(16, end), linear;
+  animation-delay: 0s, 1s, 2s;
+  animation-iteration-count: 1, 1, infinite;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+
+.slogan span {
+  display: block;
+  width: 9em;
+}
+ .slogans {
+  position: top;
+ left: 39%;
+  height:45px;
+  color: #09bdc7;
+  display: block;
+  overflow: hidden; 
+  width: 0em;
+  height: 1.25em;
+  margin: 1em auto;
+  font-size: 5em;
+  line-height: 1.5em;
+  border-right: .105em solid #39F;
+  box-sizing: content-box;
+  animation-name: blink-start, typingn, blink-end;
+  animation-duration: 1s, 3s, 1s;
+  animation-timing-function: linear, steps(16, end), linear;
+  animation-delay: 0s, 1s, 2s;
+  animation-iteration-count: 1, 1, infinite;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+
+.slogans span {
+  display: block;
+  width: 10em;
+}
+
+@keyframes typing {
+   from { width: 0em; }
+   to   { width: 9em; }
+}
+
+@keyframes typingn {
+  from { width: 0em; }
+  to   { width: 4em; }
+}
+
+ 
+ @keyframes blink-start {
+   from, to { border-color: #39F; }
+   50% { border-color: transparent; }
+ }
+ 
+ @keyframes blink-end {
+   from, to { border-color: #39F; }
+   50% { border-color: transparent; }
+ }
+
+ .contact {
+   position: relative;
+   width: 20em;
+   margin: -1em auto 1.5em auto;
+ }
+ 
+ .contact a {
+   display: inline-block;
+   overflow: hidden;
+   opacity: 0;
+   width: 2em;
+   line-height: 2em;
+   margin: 0 .20em;
+   color: #555;
+   font-size: 1.5em;
+   transition: background-color .2s ease-in-out;
+   border-radius: 50%;
+   animation: icons .2s ease-out 0s 1 normal forwards;
+ }
+
+ 
+ .contact a:nth-child(1) { animation-delay: 2.5s; }
+ .contact a:nth-child(2) { animation-delay: 2.55s; }
+ .contact a:nth-child(3) { animation-delay: 2.6s; }
+ .contact a:nth-child(4) { animation-delay: 2.65s; }
+ 
+ .contact a:hover { color: rgb(0, 60, 119); }
+
+h1 {
+  color: rgb(0, 179, 255);
+  padding: 4rem 6rem 5.5rem;
+  border: 0.4rem solid rgb(0, 179, 255);
+  border-radius: 2rem;
+  animation: flicker 1.5s infinite alternate; 
+  --neon-border-color: #08f;    
+}
+
+/* Animate neon flicker */
+@keyframes flicker {
+    
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        
+        box-shadow:
+            0 0 .5rem rgb(0, 187, 255),
+            inset 0 0 .5rem rgb(0, 132, 255),
+            0 0 2rem var(--neon-border-color),
+            inset 0 0 2rem var(--neon-border-color),
+            0 0 4rem var(--neon-border-color),
+            inset 0 0 4rem var(--neon-border-color);        
+    }
+    
+    20%, 24%, 55% {        
+        box-shadow: none;
+    }    
+}

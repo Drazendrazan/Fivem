@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div id="container"> 
+        <img src="Assets/van.png" id="logoIcon">
+        <h2 id="overnameMenuScreen">Car Delivery Panel</h2>
+
+        <div id="deliveryPannel" style="display: none;">
+            
+
+            
+    
+            <div class="mainMenu" >
+    
+                <div class="mainMenuPannelPrefab" id="carPannel">
+    
+                    <div id="carpannel">
+                        <img src="./Assets/car.png" alt="">
+    
+                        <h2>Bring Cars to Customers</h2>
+                    </div>
+                   
+    
+                </div>
+    
+                <div class="mainMenuPannelPrefab">
+                    <div id="truckpannel">
+                        <img src="./Assets/truck.png" alt="">
+    
+                        <h2>Bring Cars to Company</h2>
+                    </div>
+                    
+                </div>
+    
+            </div>
+    
+            
+    
+            <div class="carMenu" style="display: none;">
+    
+    
+    
+                <div class="carItemPrefab"  >
+                    <h2 id="nameCustomer">Michelle Becker</h2>
+    
+                    <h3 id="priceCustomer">$38192</h3>
+    
+                    <h4 id="vehicleTypeCustomer">SUV</h4>
+    
+                    <div id="radioCanvas">
+                        <input type="radio"  class='date-format-switcher' name="itemName">
+                    </div>
+    
+                   
+                </div>
+    
+            
+    
+                
+    
+            </div>
+    
+            <div class="truckMenu" style="display: none;">
+    
+                <img src="./Assets/map.png" alt="">
+    
+               
+                <h2 id="storageVehiclesText">Storage Vehicles</h2>
+                <p id="currentVehicles">12</p>
+            
+                <h2 id="readyToPickupText">Ready to pick up</h2>
+                <p id="readyToPickup">42</p>
+                
+                <button id="startToPickup">Start to pick up vehicles</button>
+    
+            </div>
+    
+            <img src="./Assets/home.png" id="backHomeMenuButton">
+            <button id="startJob" style="display: none;">Start Job</button>
+        </div>
+
+        <div id="protokolPannel" style="display: none;">
+            <div class="inputfield" id="nameInput">
+                <h2 id="nameCustomerProtokol">Micheall Becker</h2>
+                <p>Name from Customer</p>
+            </div>
+
+            <div class="inputfield" id="vehicleType">
+                <h2 id="typeCustomerProtokol">SUV</h2>
+                <p>Vehicle type</p>
+            </div>
+
+            <div class="inputfield" id="priceType">
+                <h2 id="priceCustomerProtokol">$81233</h2>
+                <p>Vehicle price</p>
+            </div>
+
+            <button id="finishDeliveryButton">Finish!</button>
+
+            <p id="infoText">Hello dear buyer, thank you for ordering a car from us. Our delivery service has hopefully delivered your vehicle safely and safely to your desired storage location. We wish you a nice day and if there are problems please contact our hotline</p>
+        </div>
+
+
+
+       
+    </div>
+    <script src="./index.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <script>
+
+            
+
+    $(document).ready(function(){
+
+        $( "#carpannel" ).click(function() {
+
+            $(".mainMenu").fadeOut(500);
+            $(".carMenu").delay(600).fadeIn(500);
+            $("#startJob").delay(600).fadeIn(500);
+            
+		});
+
+        
+        $( "#truckpannel" ).click(function() {
+
+            $(".mainMenu").fadeOut(500);
+            $(".truckMenu").delay(600).fadeIn(500);
+            
+		});
+
+        $( "#backHomeMenuButton" ).click(function() {
+
+            $(".carMenu").fadeOut(500);
+            $("#startJob").fadeOut(500);
+            $(".truckMenu").fadeOut(500);
+            $(".mainMenu").delay(600).fadeIn(500);
+		});
+
+        $( "#startToPickup" ).click(function() {
+            $(".carMenu").fadeOut(500);
+            $("#startJob").fadeOut(500);
+            $(".truckMenu").fadeOut(500);
+            $(".mainMenu").delay(600).fadeIn(500);
+
+            $.post('http://nethush_carDelivery/exit', JSON.stringify({}));
+            $.post('http://nethush_carDelivery/startPickup', JSON.stringify({}));
+		});
+        $( "#finishDeliveryButton" ).click(function() {
+            $(".carMenu").fadeOut(500);
+            $("#startJob").fadeOut(500);
+            $(".truckMenu").fadeOut(500);
+            $("#protokolPannel").fadeOut(200);
+            $(".mainMenu").delay(600).fadeIn(500);
+            
+            $.post('http://nethush_carDelivery/finishDelivery', JSON.stringify({}));
+            $.post('http://nethush_carDelivery/exit', JSON.stringify({}));
+		});
+        $( "#startJob" ).click(function() {
+
+            var idItemBuy= $('input[name=itemName]:checked', '.carMenu').val();
+
+            if(idItemBuy){
+                $(".carMenu").fadeOut(500);
+                $("#startJob").fadeOut(500);
+                $(".truckMenu").fadeOut(500);
+                $.post("http://nethush_carDelivery/startDeliveryVehicle", JSON.stringify({
+                    idItemBuy: idItemBuy
+                }))
+                $.post('http://nethush_carDelivery/exit', JSON.stringify({}));
+            }
+            
+		});
+    
+    });
+    </script>
+</body>
+</html>

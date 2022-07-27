@@ -1,0 +1,373 @@
+html {
+  overflow: hidden;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 1px 1px 1px rgba(1, 1, 1, 1);
+}
+
+.vehicle {
+  display: block;
+  min-width: 100%;
+}
+
+.outline {
+  position: fixed;
+  bottom: 8vh;
+  left: 5.8vh;
+  overflow: hidden;
+  width: 29.629vh;
+  text-align: center;
+}
+
+.mapborder {
+  width: 27vh;
+  height: 27vh;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.5);
+  position: relative;
+  top: 47px;
+  display: inline-block;
+}
+
+.bottom {
+  position: fixed;
+  display: none;
+  bottom: 4.629vh;
+  left: 10vh;
+  width: 21vh;
+  background-color: rgba(24, 24, 24, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.5);
+  height: 53px;
+  bottom: 40px;
+  border-radius: 50px;
+}
+
+.street {
+  display: block;
+  min-width: 100%;
+  clear: both;
+  padding-top: 0.96%;
+  margin-left: 0.2%;
+}
+
+.street-main-txt {
+  font-size: 17px;
+  font-weight: 500;
+  padding-left: 5.5%;
+}
+
+.street-secondary-txt {
+  font-size: 15px;
+  padding-left: 5.5%;
+}
+
+.belt {
+  position: fixed;
+  width: 15%;
+  height: 2.9%;
+  left: 12%;
+  bottom: 4.7%;
+  overflow: hidden;
+}
+
+#belt_status {
+  position: relative;
+  width: 25px;
+  padding-right: 3px;
+}
+
+#engine_status {
+  position: relative;
+  width: 25px;
+  padding-right: 3px;
+  display: none;
+}
+
+#keys_status {
+  position: relative;
+  width: 25px;
+  padding-right: 3px;
+}
+
+.left {
+  float: left;
+}
+
+.smalltext {
+  font-size: 7px;
+  margin-left: 20px;
+  text-shadow: 1px 1px black;
+}
+
+.fuelamount {
+  position: relative;
+  font-size: 1;
+  text-align: center;
+  margin-right: 420px;
+}
+
+.speedamount {
+  position: relative;
+  bottom: 100%;
+  font-size: 15;
+  text-align: center;
+  margin-right: 1542px;
+}
+
+.nos {
+  margin-left: 25px;
+}
+.engine {
+  margin-left: 25px;
+  margin-top: -5px;
+}
+
+.fuel {
+  margin-left: 25px;
+  margin-top: -5px;
+}
+
+.red {
+  color: red;
+
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.green {
+  color: green;
+
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+.blue {
+  color: rgb(102, 143, 255);
+
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 1;
+  text-shadow: 1px 1px black;
+}
+.yellow {
+  color: yellow;
+
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 1;
+  text-shadow: 1px 1px black;
+}
+
+.wrap {
+  margin-top: 52%;
+  margin-left: 16%;
+}
+.full-screen {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 2100px) {
+  .stat,
+  .stat .icon {
+    height: 44px;
+  }
+}
+
+@media (min-width: 2200px) {
+  .stat,
+  .stat .icon {
+    height: 46px;
+  }
+  .status {
+    width: 280px;
+  }
+  .stat {
+    width: 251px;
+  }
+  .stat span {
+    font-size: 14px;
+    line-height: 15px;
+    margin-top: 2px;
+  }
+}
+
+@media (min-width: 2300px) {
+  .stat,
+  .stat .icon {
+    height: 48px;
+  }
+}
+
+@media (min-width: 2400px) {
+  .stat,
+  .stat .icon {
+    height: 50px;
+  }
+  .status {
+    width: 300px;
+  }
+  .stat {
+    width: 271px;
+  }
+}
+
+@media (min-width: 2500px) {
+  .stat,
+  .stat .icon {
+    height: 52px;
+  }
+}
+
+@media (max-width: 1800px) {
+  .stat,
+  .stat .icon {
+    height: 38px;
+  }
+}
+
+@media (max-width: 1700px) {
+  .stat,
+  .stat .icon {
+    height: 36px;
+  }
+}
+
+@media (max-width: 1600px) {
+  .stat,
+  .stat .icon {
+    height: 34px;
+  }
+  .status {
+    width: 240px;
+  }
+  .stat {
+    width: 211px;
+  }
+  .stat span {
+    font-size: 12px;
+    line-height: 12px;
+    margin-top: 2px;
+  }
+  .stat .icon img {
+    margin-top: 2px;
+  }
+}
+
+@media (max-width: 1500px) {
+  .stat,
+  .stat .icon {
+    height: 32px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .stat,
+  .stat .icon {
+    height: 30px;
+  }
+  .status {
+    width: 225px;
+  }
+  .stat {
+    width: 196px;
+    margin-bottom: 4px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .stat,
+  .stat .icon {
+    height: 28px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .stat,
+  .stat .icon {
+    height: 26px;
+  }
+  .stat span {
+    font-size: 10px;
+    line-height: 10px;
+  }
+  .status {
+    width: 200px;
+  }
+  .stat {
+    width: 171px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .stat,
+  .stat .icon {
+    height: 24px;
+  }
+}
+
+.progress-fuel {
+  stroke-opacity: 1;
+  stroke-width: 2;
+  fill: transparent;
+}
+
+.progress {
+  -webkit-transition: 0.35s stroke-dashoffset;
+  -o-transition: 0.35s stroke-dashoffset;
+  transition: 0.35s stroke-dashoffset;
+  -webkit-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  transform: rotate(135deg);
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+
+.backgroundCircle,
+.outer {
+  -webkit-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  transform: rotate(135deg);
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+
+.lower {
+  margin-top: 53% !important;
+}
+
+.timelower {
+  padding-bottom: 0px !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.direction {
+  width: 100px;
+  height: 22px;
+  overflow: hidden;
+  float: left;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-left: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-right: 1.5px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.direction > .image {
+  height: 100%;
+  background-position: center center;
+  background-size: 400px;
+  background-repeat: repeat;
+  width: 800%;
+  z-index: 1;
+  background-image: url("compass.png");
+  transition: 0.4s;
+}

@@ -1,0 +1,15 @@
+<CodeWalkerProject>
+  <Name>meth</Name>
+  <Version value="1" />
+  <YmapFilenames>
+    <Item>meth.ymap</Item>
+    <Item>lr_cs4_04_strm_0.ymap</Item>
+    <Item>lr_cs4_roads_strm_0.ymap</Item>
+    <Item>lr_cs4_roads_critical_0.ymap</Item>
+  </YmapFilenames>
+  <YtypFilenames />
+  <YndFilenames />
+  <YnvFilenames />
+  <TrainsFilenames />
+  <ScenarioFilenames />
+</CodeWalkerProject>

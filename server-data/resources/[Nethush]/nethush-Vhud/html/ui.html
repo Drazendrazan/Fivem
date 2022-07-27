@@ -1,0 +1,50 @@
+<head>
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="scripts.js" type="text/javascript"></script>
+    <script src="debounce.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+
+
+<body>
+    <div class="bottom">
+        <div class="outline">
+            <center>
+                <div class="mapborder"></div>
+            </center>
+        </div>
+        <div class="vehicle" > 
+            <div class="speed" style="bottom: 10px;"> 
+                <svg width="53" height="53">
+                    <circle class="backgroundCircle" stroke="#FFFFFF" stroke-width="2" style="stroke-opacity: 0.2;" fill="transparent" r="21" cx="25" cy="25" />
+                    <circle class="progress progress-speed" stroke="#FFFFFF" stroke-width="2" style="stroke-opacity: 1; stroke-dasharray: 30, 4;" fill="transparent" r="21" cx="25" cy="25"/>
+                </svg>
+            </div>
+            <div class="speedamount stat" style="position: blocked; opacity: 0.9; margin-left: -74%; margin-right: 1%; margin-top: -17%;"> 100 </div>
+            <div class="smalltext" style="position: relative; bottom: -2px; opacity: 0.6;"> KMH </div>
+
+            <div class="fuell" style="position: relative; bottom: 37px; left: 60px;">
+                <svg class="circle" width="50" height="50">
+                    <circle class="backgroundCircle" stroke="#FFFFFF" stroke-width="2" style="stroke-opacity: 0.2;" fill="transparent" r="21" cx="25" cy="25"/>
+                    <circle class="progress progress-fuel" stroke="#FFFFFF" r="21" cx="25" cy="25"/>
+                </svg>
+                <div class="fuelamount"  style="position: blocked; opacity: 0.9; margin-left: -74%; margin-right: 4%; margin-top: -17%;"> 100 </div>  
+                <div class="smalltext" style="position: relative; bottom: -2px; opacity: 0.6; right: 1.5%;"> GAS </div>
+            </div>
+        </div>
+    </div>
+    <div class="full-screen" style="position: relative; bottom: 3.1%;">
+        <div class="wrap">
+            <div class="street" style="position: fixed; bottom: 1px; left: 8.7%;">
+                <div class="direction"><div class="image"></div></div>
+                <div class="street-main-txt">Los Santos</div>
+                <div class="street-secondary-txt">Wicket St | Hawick</div>
+                </div>
+            </div>
+            <div class="belt">
+                <img id="belt_status" src="belt.png">
+                <img id="engine_status" src="engine1.png">
+            </div>
+        </div>
+    </div>
+</body>
