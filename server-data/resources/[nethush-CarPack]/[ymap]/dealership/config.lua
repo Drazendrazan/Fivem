@@ -153,10 +153,70 @@ Config.dealership_locations = {
 		},
 		['type'] = 'Bikes_dealer',
 	},
+	["dealer_5"] = {
+		['buy_price'] = 300000,
+		['sell_price'] = 0,
+		['coord'] = {373.9359, -748.7786, 29.3805},
+		['truck_coord'] = {402.0328, -761.9302, 29.0483},
+		['trailer_coord'] = {401.9673, -744.8742, 29.0482},
+		['test_drive'] = {
+			['teleport'] = true,
+			['test_drive_coord'] = {390.5090, -751.9993, 28.8613, 268.1480},
+			['test_drive_time'] = 20
+		},
+		['truck_name'] = "hauler",
+		['trailer'] = {
+			['empty'] = "tr2",
+			['full'] = "tr4",
+		},
+		['cutomers_garage_coord'] = {390.5090, -751.9993, 28.8613, 268.1480},
+		['sell_blip_coords'] = {
+			{
+				['dealer'] = {387.6662, -744.4242, 29.2940},
+				['preview'] = {387.5384, -739.7815, 28.8656}
+			},
+		},
+		['type'] = 'tesla_dealer',
+	},
 }
 
 -- Here you configure each type of dealership available to buy
 Config.dealership_types = {
+	['tesla_dealer'] = {
+		['stock_capacity'] = 300,
+		['max_employees'] = 5,
+	   ['vehicles'] = {
+			['model3'] = {
+			   ['name'] = "Tesla Model 3",
+				['price_to_customer'] = 135000,
+				['price_to_owner'] = 120000,
+			   ['price_to_export'] = 80000,
+				['amount_to_owner'] = 1,
+			   ['max_stock'] = 1,
+				['img'] = 'https://media.discordapp.net/attachments/954781623323357215/1002228190221189121/unknown.png',
+				['page'] = 0
+			},
+			['p90d'] = {
+				['name'] = "Tesla Model X",
+				 ['price_to_customer'] = 135000,
+				 ['price_to_owner'] = 120000,
+				['price_to_export'] = 80000,
+				 ['amount_to_owner'] = 1,
+				['max_stock'] = 1,
+				 ['img'] = 'https://media.discordapp.net/attachments/954781623323357215/1002229072539156531/unknown.png',
+				 ['page'] = 0
+			 },
+		},
+		['pagination'] = {
+		   [0] = "Super",
+		},
+		['blips'] = {
+			['id'] = 225,
+		   ['name'] = "Tesla car store",
+			['color'] = 8,
+			['scale'] = 0.8,
+		}
+   },
 	['main_dealer'] = {								-- Dealership type ID
 		['stock_capacity'] = 150,					-- Max stock capacity
 		['max_employees'] = 5,						-- Max employees

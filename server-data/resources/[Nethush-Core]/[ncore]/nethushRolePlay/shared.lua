@@ -3663,8 +3663,32 @@ QBShared.Vehicles = {
 		["trunkslots"] = 80,
 		["shop"] = "custom",
 	},
+	["model3"] = {
+		["name"] = "Tesla Model 3",
+		["brand"] = "Tesla",
+		["model"] = "model3",
+		["price"] = 4800000,
+		["category"] = "super",
+		["hash"] = GetHashKey("model3"),
+		["image"] = "https://vignette.wikia.nocookie.net/gtawiki/images/0/07/FaggioMod-GTAO-front.png",
+		["trunkspace"] = 80000,
+		["trunkslots"] = 80,
+		["shop"] = "custom",
+	},
 }
 QBShared.VehicleModels = {
+	[GetHashKey("model3")] = {
+		["name"] = "Tesla Model 3",
+		["brand"] = "Tesla",
+		["model"] = "model3",
+		["price"] = 4800000, --8,500,000
+		["category"] = "super",
+		["hash"] = GetHashKey("model3"),
+		["image"] = "https://vignette.wikia.nocookie.net/gtawiki/images/0/07/FaggioMod-GTAO-front.png",
+		["trunkspace"] = 80000, --60000 chage kala
+		["trunkslots"] = 80,
+		["shop"] = "custom",
+	},
 	[GetHashKey("pistas")] = {
 		["name"] = "Ferrari 488 Pista Spider",
 		["brand"] = "Ferrari",
